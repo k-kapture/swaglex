@@ -309,20 +309,47 @@ components:
     $ref: './components/schemas.yaml'
 ```
 
-## TypeScript Support
+## Static Site Generation
 
-Swaglex includes full TypeScript definitions:
+Swaglex can also generate static sites that can be served without a Node.js server. This is useful for deploying API documentation to static hosting services like GitHub Pages, Netlify, or Vercel.
 
-```typescript
-import { createSwaggerServer, SwaglexConfig, SwaglexServer } from 'swaglex';
+### Building a Static Site
 
-const config: SwaglexConfig = {
-  specPath: './openapi.yaml',
-  port: 3001
-};
+```bash
+npm install --save-dev swagger-ui-dist
+npm run build:static -- --spec ./path/to/your/openapi.yaml --output ./dist
+```
 
-const server: SwaglexServer = createSwaggerServer(config);
-server.start();
+### Build Options
+
+- `--spec, -s`: Path to your OpenAPI specification file (required)
+- `--output, -o`: Output directory for static files (default: `./dist`)
+- `--title, -t`: Custom site title (default: "API Documentation")
+
+### Example
+
+```bash
+# Build with custom title
+npm run build:static -- --spec ./api/openapi.yaml --output ./docs --title "My API Docs"
+
+# The generated files can be served by any static web server
+cd docs && python -m http.server 8000
+```
+
+### Programmatic Usage
+
+```javascript
+const { buildStaticSite } = require('swaglex/build-static');
+
+buildStaticSite({
+  specPath: './api/openapi.yaml',
+  outputDir: './dist',
+  siteTitle: 'My API Documentation',
+  customCss: `
+    .swagger-ui .topbar { background-color: #2c3e50; }
+    .swagger-ui .info .title { color: #3498db; }
+  `
+});
 ```
 
 ## API
