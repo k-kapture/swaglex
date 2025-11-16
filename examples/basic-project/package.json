@@ -1,0 +1,21 @@
+{
+  "name": "basic-api-docs",
+  "version": "1.0.0",
+  "description": "Basic Swaglex API documentation server",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "api",
+    "documentation",
+    "swagger",
+    "openapi"
+  ],
+  "author": "Swaglex Example",
+  "license": "MIT",
+  "dependencies": {
+    "swaglex": "file:../.."
+  }
+}
