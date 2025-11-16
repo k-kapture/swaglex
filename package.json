@@ -19,11 +19,14 @@
     "yaml",
     "json"
   ],
-  "author": "Ishan Ravindu",
+  "author": "Ishan-Ravindu",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Ishan-Ravindu/swaglex.git",
+    "url": "https://github.com/k-kapture/swaglex.git",
     "directory": "swaglex"
   },
   "dependencies": {
