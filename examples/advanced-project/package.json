@@ -1,0 +1,23 @@
+{
+  "name": "advanced-api-docs",
+  "version": "1.0.0",
+  "description": "Advanced Swaglex API documentation server with custom styling and features",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "api",
+    "documentation",
+    "swagger",
+    "openapi",
+    "advanced"
+  ],
+  "author": "Swaglex Example",
+  "license": "MIT",
+  "dependencies": {
+    "swaglex": "file:../..",
+    "express": "^4.18.2"
+  }
+}
